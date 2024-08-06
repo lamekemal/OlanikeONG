@@ -57,7 +57,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 app.UseCookiePolicy();
-app.UseRouting();
+
 app.UseFileServer();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
