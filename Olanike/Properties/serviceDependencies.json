@@ -9,11 +9,6 @@
       "type": "secrets",
       "dynamicId": null
     },
-    "cosmosdb2": {
-      "type": "cosmosdb",
-      "connectionId": "ConnectionStrings:vsazure",
-      "dynamicId": null
-    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:DefaultConnection",

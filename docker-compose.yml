@@ -1,5 +1,5 @@
 services:
-  Olanike:
+  myolanike:
     build: .
     ports:
       - "5006:8080"
