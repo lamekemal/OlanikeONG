@@ -1,0 +1,172 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager navigationManager
+
+<HeadContent>
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" href="/css/vendors.min.css" />
+    <link rel="stylesheet" href="/css/icon.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/demos/green-energy/green-energy.css" />
+    <script src="_framework/blazor.web.js"></script>
+    <script language=" JavaScript">
+        <!--
+        function LoadOnce() {
+            window.location.reload();
+        }
+        //-->
+    </script>
+</HeadContent>
+
+<CascadingValue Value="@golbalVaule">
+    <body data-mobile-nav-style="classic">
+        <header>
+            <!-- start navigation -->
+            <nav class="navbar navbar-expand-lg header-light bg-white header-reverse" data-header-hover="light">
+                <div class="container-fluid">
+                    <div class="col-auto">
+                        <a class="navbar-brand" href="/">
+                            <img src="images/olanike_rect_logo.png" alt="" class="default-logo">
+                            <img src="images/olanike_rect_logo.png" alt="" class="alt-logo">
+                            <img src="images/olanike_rect_logo.png" alt="" class="mobile-logo">
+                        </a>
+                    </div>
+                    <div class="col-auto menu-order left-nav">
+                        <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+                                <li class="nav-item"><a href="#homeAbout" class="nav-link">A Propos de nous</a></li>
+                                <li class="nav-item"><a href="#homeMission" class="nav-link">Notre mission</a></li>
+                                <li class="nav-item dropdown dropdown-with-icon-style02">
+                                    <a href="#homeProjects" class="nav-link">Projets</a>
+                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                                        <li><a href="/Project01"><i class="line-icon-Profile align-middle text-base-color"></i>Projet Filles Mères en Actions</a></li>
+                                        <li><a href="/Project02"><i class="line-icon-Book align-middle text-base-color"></i>Projet Fournitures Scolaire pour Tous</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a href="/Blog" class="nav-link">Blog</a></li>
+                                <li class="nav-item"><a href="#homeContact" class="nav-link">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto ms-auto ps-lg-0 d-none d-sm-flex">
+                        <div class="d-none d-xl-flex me-25px xl-me-0">
+                            <div class="d-flex align-items-center widget-text fw-600"><a href="tel:+22991379988"><span class="d-inline-block align-middle me-10px bg-very-light-green h-45px w-45px lh-44 text-center rounded-circle text-base-color"><i class="feather icon-feather-phone-call"></i></span><span class="d-none d-xxl-inline-block align-middle">+229 91 379 988</span></a></div>
+                        </div>
+                        <div class="header-icon">
+                            <div class="header-button">
+                                <a href=@golbalVaule.donateLink class="btn border-1 btn-base-color btn-small btn-rounded btn-box-shadow left-icon btn-switch-text">
+                                    <span>
+                                        <span class="btn-double-text" data-text="Faire un don">Faire un don</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navigation -->
+        </header>
+
+        <main>
+            @Body
+        </main>
+
+        <footer class="bg-dark-gray pb-30px">
+            <div class="container">
+                <div class="row mb-5 xs-mb-30px">
+                    <div class="col-xl-5 col-md-7 sm-mb-30px order-2 order-xl-1">
+                        <h3 class="text-white fw-600 mb-30px ls-minus-2px">Notre engagement c'est soutenir les enfants et les filles mères au Bénin</h3>
+                        <div class="row">
+                            <div class="col-xxl-5 col-sm-6 sm-mb-20px">
+                                <span class="fs-18 fw-500 text-white d-block">Envoyer un mail</span>
+                                <a href=@golbalVaule.mailInfoLink>@golbalVaule.mailInfoText</a>
+                            </div>
+                            <div class="col-xxl-5 col-sm-6">
+                                <span class="fs-18 fw-500 text-white d-block">Appel Téléphonique</span>
+                                <a href="tel:+22991379988">+229 91 379 988</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 order-3 order-md-2">
+                        <span class="fs-18 fw-500 d-block text-white mb-5px">Information</span>
+                        <ul>
+                            <li><a href="/">Notre Structure</a></li>
+                            @if ("/".Equals(navigationManager.Uri.Substring(navigationManager.BaseUri.Length - 1)))
+                            {
+                                <li><a href="#homeAbout">A Propos de nous</a></li>
+                                <li><a href="#homeMission">Notre mission</a></li>
+                                <li><a href="#homeProjects">Projets</a></li>
+                                <li><a href="#homeContact">Contact</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/Projects">Projets</a></li>
+                                <li><a href="/Blog">Blog</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-6 order-3 order-md-3">
+                        <span class="fs-18 fw-500 d-block text-white mb-5px">Réseau social</span>
+                        <ul>
+                            <li><a href="@golbalVaule.socialLinkFacebook" target="_blank">Facebook</a></li>
+                            <li><a href="@golbalVaule.socialLinkTwitter" target="_blank">X (Twitter)</a></li>
+                            <li><a href="@golbalVaule.socialLinkInstagram" target="_blank">Instagram</a></li>
+                            <li><a href="@golbalVaule.socialLinkLinkedin" target="_blank">Linkedin</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 order-1 order-xl-4 lg-mb-30px">
+                        <a href="/" class="footer-logo-xl"><img src="images/olanike_sqr_logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="row g-0 border-top border-color-transparent-white-light"></div>
+                <div class="row align-items-center footer-bottom pt-30px">
+                    <div class="col-md-7 last-paragraph-no-margin">
+                        <p class="fs-14 lh-24 w-90 sm-w-100">This site is protected by reCAPTCHA and the Google privacy policy and terms of service apply. This website is build by Archeos BJ.</p>
+                    </div>
+                    <div class="col-md-5 text-md-end sm-mt-15px last-paragraph-no-margin">
+                        <p class="fs-14 lh-24">@CopyrightText</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- end footer -->
+        <!-- start scroll progress -->
+        <div class="scroll-progress d-none d-xxl-block">
+            <a href="#" class="scroll-top" aria-label="navigation">
+                <span class="scroll-text">Navigation</span><span class="scroll-line"><span class="scroll-point"></span></span>
+            </a>
+        </div>
+        <!-- end scroll progress -->
+
+    </body>
+</CascadingValue>
+
+@code {
+    public string CopyrightText { get; set; } = "Copyright © " + DateTime.UtcNow.Year + " Olanike ONG. All rights reserved.";
+    GolbalValue golbalVaule = new GolbalValue
+        {
+            uid = Guid.NewGuid().ToString(),
+            donateLink = "mailto:info@domain.com",
+            mailInfoLink = "mailto:info@domain.com",
+            mailInfoText = "info@olanike.org",
+            socialLinkFacebook = "mailto:info@domain.com",
+            socialLinkTwitter = "mailto:info@domain.com",
+            socialLinkInstagram = "mailto:info@domain.com",
+            socialLinkLinkedin = "mailto:info@domain.com",
+            currentPage = 1
+        };
+    public string StringOfDonate { get; set; } = "mailto:info@domain.com";
+
+}
