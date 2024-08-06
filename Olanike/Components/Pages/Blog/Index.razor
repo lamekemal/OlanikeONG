@@ -4,7 +4,6 @@
 @inject ILogger<Index> Logger
 @inject ApplicationDbContext dbContext
 @inject IJSRuntime jsRuntime
-
 <PageTitle>Olanike - Blog</PageTitle>
 <!-- start section -->
 <!-- start section -->
@@ -24,6 +23,11 @@
 <!-- end section -->
 
 @code {
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        _navigationManager.Refresh();
+        StateHasChanged();
+    }
     protected override Task OnInitializedAsync()
     {
         StateHasChanged();

@@ -1,3 +1,4 @@
+
 /* -------------------------------------------------------
  
  Theme Name: Crafto - The Multipurpose HTML5 Template
@@ -7,7 +8,7 @@
  Author ThemeForest URL: https://themeforest.net/user/themezaa
  Copyright(c) 2024 themezaa.com
  Version: 2.0
- 
+ blazor-ssr-end
  ------------------------------------------------------- */
 
 (function ($) {

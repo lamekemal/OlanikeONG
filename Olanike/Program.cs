@@ -61,7 +61,7 @@ app.UseCookiePolicy();
 app.UseFileServer();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
-
+//app.MapBlazorHub("/");
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
 
