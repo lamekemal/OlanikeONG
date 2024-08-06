@@ -24,6 +24,13 @@
 <!-- end section -->
 
 @code {
+    protected override Task OnInitializedAsync()
+    {
+        StateHasChanged();
+        Task.Delay(1);
+        return base.OnInitializedAsync();
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -31,5 +38,8 @@
             _navigationManager.Refresh();
         }
         await jsRuntime.InvokeVoidAsync("reloadIt");
+        StateHasChanged();
+        await Task.Delay(1);
+        return;
     }
 }
