@@ -14,7 +14,6 @@ RUN dotnet build Olanike.csproj -c $BUILD_CONFIGURATION -o /app/build
 
 
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish Olanike.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
