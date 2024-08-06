@@ -2,6 +2,6 @@ services:
   myolanike:
     build: .
     ports:
-      - "4431:443"
+      - "8443:443"
       - "8001:80"
 
