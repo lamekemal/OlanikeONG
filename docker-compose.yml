@@ -1,7 +1,7 @@
 services:
   myolanike:
     build: .
+    container_name: olanike_app
     ports:
-      - "8443:443"
-      - "8001:80"
-
+      - "9091:80"
+      - "9092:443"
