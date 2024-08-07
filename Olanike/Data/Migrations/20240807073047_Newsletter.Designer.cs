@@ -12,8 +12,8 @@ using Olanike.Data;
 namespace Olanike.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240806195006_CreateNlsDb")]
-    partial class CreateNlsDb
+    [Migration("20240807073047_Newsletter")]
+    partial class Newsletter
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

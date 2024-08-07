@@ -1,14 +1,14 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 
 namespace Olanike.Models
 {
     public class Newsletter : TableEntity
     {
-        [Required]
-        [JsonProperty("id")]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Tokens { get; set; } = Guid.NewGuid().ToString();
 
